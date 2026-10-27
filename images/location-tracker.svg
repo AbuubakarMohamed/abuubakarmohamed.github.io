@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="diagram" viewBox="0 0 380 240" role="img" aria-label="Architecture: Android app and web dashboard both connect to Firebase, with Google Maps for mapping">
+  <style>
+    /* Colours come from the page when this is inlined; the svg:root values only apply when the file is opened on its own. */
+    svg:root { --ink: #141A2A; --muted: #5A6378; --line: #D9DEE8; --surface: #FFFFFF; --accent: #2B45D4; --accent-soft: #E3E7FB; }
+    @media (prefers-color-scheme: dark) {
+      svg:root { --ink: #E8ECF6; --muted: #9AA3B8; --line: #283049; --surface: #161B2C; --accent: #8EA0FF; --accent-soft: #1F2747; }
+    }
+    .diagram text { font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 11px; fill: var(--muted); }
+    .diagram .label { font-family: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif; font-size: 13px; font-weight: 600; fill: var(--ink); }
+    .diagram .node { fill: var(--surface); stroke: var(--line); stroke-width: 1.5; }
+    .diagram .hub { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1.5; }
+    .diagram .edge { stroke: var(--accent); stroke-width: 1.5; fill: none; stroke-dasharray: 4 4; animation: flow 1.2s linear infinite; }
+    .diagram .arrow { fill: var(--accent); }
+    @keyframes flow { to { stroke-dashoffset: -8; } }
+    @media (prefers-reduced-motion: reduce) { .diagram .edge { animation: none; } }
+  </style>
+  <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrow" d="M0 0L10 5L0 10z"/></marker></defs>
+  <rect class="node" x="14" y="30" width="120" height="58" rx="10"/>
+  <text class="label" x="74" y="56" text-anchor="middle">Android app</text>
+  <text x="74" y="74" text-anchor="middle">sends location</text>
+  <rect class="node" x="246" y="30" width="120" height="58" rx="10"/>
+  <text class="label" x="306" y="56" text-anchor="middle">Web dashboard</text>
+  <text x="306" y="74" text-anchor="middle">live map view</text>
+  <rect class="hub" x="130" y="150" width="120" height="58" rx="10"/>
+  <text class="label" x="190" y="176" text-anchor="middle">Firebase</text>
+  <text x="190" y="194" text-anchor="middle">shared backend</text>
+  <path class="edge" d="M74 90 L74 120 Q74 179 126 179" marker-end="url(#ah)"/>
+  <path class="edge" d="M254 179 Q306 179 306 120 L306 92" marker-end="url(#ah)"/>
+  <text x="200" y="22" text-anchor="middle">Google Maps API ↔ both clients</text>
+</svg>

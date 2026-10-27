@@ -1,20 +1,34 @@
 # Abuubakar Mohamed: Portfolio
 
-My personal portfolio website: about me, my featured project, skills, experience and education.
+My personal portfolio website: about me, my projects, skills, experience and education.
 
-Built with plain HTML and CSS, no build step needed.
+Live at **https://abuubakar.co.uk**
+
+Built with plain HTML, CSS and JavaScript, no build step needed.
+
+## Add or edit a project
+
+Projects live in [`projects.js`](projects.js). The instructions and a copy-paste template are at the top of that file.
+
+1. Copy the template into the list and fill it in.
+2. Optional: put a screenshot in the `images` folder and set `image: "images/your-file.png"`.
+3. Publish:
+
+   ```
+   git add -A
+   git commit -m "Add project"
+   git push
+   ```
+
+The site updates within a minute or two. Filter buttons are created automatically from each project's `tags`.
 
 ## Run locally
 
 Open `index.html` in a browser.
 
-## Publish with GitHub Pages
+## Hosting
 
-1. Go to **Settings → Pages** in this repo.
-2. Under **Build and deployment**, choose **Deploy from a branch**.
-3. Pick the `main` branch and the `/ (root)` folder, then save.
-
-The site will be live at `https://abuubakarmohamed.github.io/<repo-name>/` within a minute or two.
+GitHub Pages from the `main` branch root, with the custom domain set in `CNAME`. DNS is on Cloudflare (DNS only, grey cloud).
 
 ## Links
 
