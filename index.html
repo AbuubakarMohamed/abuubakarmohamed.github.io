@@ -438,6 +438,36 @@ footer a:hover { color: var(--accent); }
           </details>
         </article>
 
+        <article class="pcard featured spot reveal" id="flocking-boids">
+          <div class="pc-head">
+            <div class="meta">Personal project · Interactive · 2026</div>
+            <h3>Flocking Boids</h3>
+            <p class="problem"><strong>The problem:</strong> simulating thousands of agents that each react to their neighbours is O(n²) if done naively, which is far too slow to run smoothly in a browser.</p>
+          </div>
+          <div class="pc-grid">
+            <div>
+              <p class="label">What I built</p>
+              <ul class="built">
+                <li>A real-time <b>flocking simulation</b> where murmurations, schools and swarms emerge from three local rules, with live sliders, presets, a predator and mouse interaction.</li>
+                <li>A <b>spatial hash grid</b>, rebuilt each frame with a counting sort, that cuts neighbour checks by over 90% and keeps 1,000+ boids above 60 FPS.</li>
+                <li>Cache-friendly <b>typed-array</b> state with zero allocations per frame, and batched Canvas drawing: 16 draw calls for the whole flock.</li>
+                <li>A live <b>performance HUD</b> and grid view that show the optimisation working.</li>
+              </ul>
+              <div class="chips" aria-label="Tech stack">
+                <span class="chip">TypeScript</span><span class="chip">React</span><span class="chip">Canvas 2D</span><span class="chip">Vite</span><span class="chip">Algorithms</span>
+              </div>
+              <div class="pactions">
+                <a class="btn primary" href="boids/">Try it live →</a>
+                <a class="btn ghost" href="https://github.com/AbuubakarMohamed/flocking-boids" target="_blank" rel="noopener">View the code ↗</a>
+              </div>
+            </div>
+            <figure class="shot">
+              <a href="boids/"><img src="images/flocking-boids.jpg" alt="Flocking simulation: hundreds of coloured arrow-shaped boids moving in flocks, with a live stats panel and sliders for separation, alignment and cohesion" width="800" height="692" loading="lazy"></a>
+              <figcaption>Live in the browser: move your mouse to scatter the flock</figcaption>
+            </figure>
+          </div>
+        </article>
+
         <!-- TEMPLATE: copy from here to the closing </article>, paste it above this comment, then fill it in.
         <article class="pcard spot reveal" id="project-name">
           <div class="pc-head">
@@ -478,6 +508,7 @@ footer a:hover { color: var(--accent); }
             <li><a class="used" href="#location-tracker" title="Used in the Location Tracker">Kotlin</a></li>
             <li><a class="used" href="#location-tracker" title="Used in the Location Tracker">JavaScript</a></li>
             <li><a class="used" href="#location-tracker" title="Used in the Location Tracker">HTML &amp; CSS</a></li>
+            <li><a class="used" href="#flocking-boids" title="Used in Flocking Boids">TypeScript</a></li>
             <li><span>SQL</span></li>
             <li><span>C</span></li>
             <li><span>R</span></li>
@@ -491,6 +522,7 @@ footer a:hover { color: var(--accent); }
             <li><a class="used" href="#location-tracker" title="Used in the Location Tracker">Cloud Firestore</a></li>
             <li><a class="used" href="#location-tracker" title="Used in the Location Tracker">Google Maps API</a></li>
             <li><a class="used" href="#location-tracker" title="Used in the Location Tracker">WorkManager</a></li>
+            <li><a class="used" href="#flocking-boids" title="Used in Flocking Boids">React</a></li>
           </ul>
         </div>
         <div class="skill-group spot reveal">
@@ -498,12 +530,13 @@ footer a:hover { color: var(--accent); }
           <ul>
             <li><a class="used" href="#location-tracker" title="Used in the Location Tracker">Git &amp; GitHub</a></li>
             <li><a class="used" href="#location-tracker" title="Used in the Location Tracker">Android Studio</a></li>
+            <li><a class="used" href="#flocking-boids" title="Used in Flocking Boids">Vite</a></li>
             <li><span>VMware</span></li>
             <li><span>VirtualBox</span></li>
           </ul>
         </div>
       </div>
-      <p class="legend"><i aria-hidden="true"></i>Skills with a dot were used in <a href="#location-tracker">my Location Tracker project</a>. Click one to see it.</p>
+      <p class="legend"><i aria-hidden="true"></i>Skills with a dot were used in one of <a href="#projects">my projects</a>. Click one to see it.</p>
     </div>
   </section>
 
@@ -677,8 +710,8 @@ footer a:hover { color: var(--accent); }
     reveals.forEach(function (el) { el.classList.add("in"); });
   }
   // Skill links jump to the project; make sure it's visible when they land.
-  document.querySelectorAll('a[href="#location-tracker"]').forEach(function (a) {
-    a.addEventListener("click", function () { var t = document.getElementById("location-tracker"); if (t) t.classList.add("in"); });
+  document.querySelectorAll("a.used").forEach(function (a) {
+    a.addEventListener("click", function () { var t = document.getElementById(a.getAttribute("href").slice(1)); if (t) t.classList.add("in"); });
   });
 
   /* ---------- Highlight the nav link for the section on screen ---------- */

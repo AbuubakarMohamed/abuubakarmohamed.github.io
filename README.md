@@ -25,6 +25,16 @@ The site updates within a minute or two.
 
 If a skill in the Skills section was used in the new project, change its `<span>` to an `<a class="used" href="#project-id">` so it links to the project.
 
+## Flocking Boids demo
+
+`boids/` is the built output of the [flocking-boids](https://github.com/AbuubakarMohamed/flocking-boids) app (React + TypeScript), served at https://abuubakar.co.uk/boids/. Don't edit it by hand. To update it, run this in the `flocking-boids` folder next to this repo:
+
+```
+npm run build:site
+```
+
+That rebuilds straight into `boids/`; then commit and push as usual.
+
 ## Link previews
 
 `images/og-image.png` (1200×630) is the picture shown when the site is shared on LinkedIn and elsewhere. LinkedIn caches previews; to refresh one, paste the URL into https://www.linkedin.com/post-inspector/.
